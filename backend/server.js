@@ -70,7 +70,7 @@ const ensureDbConnected = async (req, res, next) => {
 app.use(ensureDbConnected);
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
+app.get(['/health', '/api/health'], (req, res) => {
   res.status(200).json({
     status: 'online',
     service: 'EmployeeHub REST API (Supabase / PostgreSQL)',
@@ -80,7 +80,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Root API welcome endpoint
-app.get('/api', (req, res) => {
+app.get(['/', '/api'], (req, res) => {
   res.status(200).json({
     status: 'online',
     service: 'EmployeeHub REST API',
