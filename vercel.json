@@ -4,12 +4,12 @@
   "outputDirectory": "frontend/dist",
   "rewrites": [
     {
-      "source": "/api/(.*)",
+      "source": "/api/:path*",
       "destination": "/api/index.js"
     },
     {
       "source": "/(.*)",
-      "destination": "/frontend/dist/$1"
+      "destination": "/index.html"
     }
   ]
 }
